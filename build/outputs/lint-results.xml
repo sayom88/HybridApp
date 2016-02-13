@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="4" by="lint 24.4.0">
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        severity="Error"
+        message="You must use a newer version of the Android Gradle plugin. The minimum supported version is 0.14.0 and the recommended version is 1.0.0-rc4"
+        category="Correctness"
+        priority="8"
+        summary="Incompatible Android Gradle Plugin"
+        explanation="Not all versions of the Android Gradle plugin are compatible with all versions of the SDK. If you update your tools, or if you are trying to open a project that was built with an old version of the tools, you may need to update your plugin version number."
+        errorLine1="            classpath &apos;com.android.tools.build:gradle:0.12.0+&apos;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\build.gradle"
+            line="43"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDeprecated"
+        severity="Warning"
+        message="&apos;android&apos; is deprecated; use &apos;com.android.application&apos; instead"
+        category="Correctness"
+        priority="6"
+        summary="Deprecated Gradle Construct"
+        explanation="This detector looks for deprecated Gradle constructs which currently work but will likely stop working in a future update."
+        errorLine1="apply plugin: &apos;android&apos;"
+        errorLine2="~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\build.gradle"
+            line="22"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        severity="Warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details."
+        category="Correctness"
+        priority="6"
+        summary="Target SDK attribute is not targeting latest version"
+        explanation="When your application runs on a version of Android that is more recent than your `targetSdkVersion` specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the `targetSdkVersion` is less than 14, your app may get an option button in the UI.
+
+To fix this issue, set the `targetSdkVersion` to the highest available value. Then test your app to make sure everything works correctly. You may want to consult the compatibility notes to see what changes apply to each version you are adding support for: http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        url="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        urls="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        errorLine1="    &lt;uses-sdk android:minSdkVersion=&quot;14&quot; android:targetSdkVersion=&quot;22&quot; />"
+        errorLine2="                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\AndroidManifest.xml"
+            line="15"
+            column="42"/>
+    </issue>
+
+    <issue
+        id="UnusedAttribute"
+        severity="Warning"
+        message="Attribute `supportsRtl` is only used in API level 17 and higher (current min is 14)"
+        category="Correctness"
+        priority="6"
+        summary="Attribute unused on older versions"
+        explanation="This check finds attributes set in XML files that were introduced in a version newer than the oldest version targeted by your application (with the the `minSdkVersion` attribute).
+
+This is not an error; the application will simply ignore the attribute. However, if the attribute is important to the appearance of functionality of your application, you should consider finding an alternative way to achieve the same result with only available attributes, and then you can optionally create a copy of the layout in a layout-vNN folder which will be used on API NN or higher where you can take advantage of the newer attribute.
+
+Note: This check does not only apply to attributes. For example, some tags can be unused too, such as the new `&lt;tag>` element in layouts introduced in API 21."
+        errorLine1="    &lt;application android:hardwareAccelerated=&quot;true&quot; android:icon=&quot;@drawable/icon&quot; android:label=&quot;@string/app_name&quot; android:supportsRtl=&quot;true&quot;>"
+        errorLine2="                                                                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\AndroidManifest.xml"
+            line="7"
+            column="116"/>
+    </issue>
+
+    <issue
+        id="ManifestOrder"
+        severity="Warning"
+        message="`&lt;uses-sdk>` tag appears after `&lt;application>` tag"
+        category="Correctness"
+        priority="5"
+        summary="Incorrect order of elements in manifest"
+        explanation="The &lt;application> tag should appear after the elements which declare which version you need, which features you need, which libraries you need, and so on. In the past there have been subtle bugs (such as themes not getting applied correctly) when the `&lt;application>` tag appears before some of these other elements, so it&apos;s best to order your manifest in the logical dependency order."
+        errorLine1="    &lt;uses-sdk android:minSdkVersion=&quot;14&quot; android:targetSdkVersion=&quot;22&quot; />"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\AndroidManifest.xml"
+            line="15"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.android.tools.build:gradle than 0.14.0.+ is available: 1.0.0-rc4"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="            classpath &apos;com.android.tools.build:gradle:0.14.0+&apos;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\build.gradle"
+            line="39"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDynamicVersion"
+        severity="Warning"
+        message="Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.android.tools.build:gradle:1.0.0+)"
+        category="Correctness"
+        priority="4"
+        summary="Gradle Dynamic Version"
+        explanation="Using `+` in dependencies lets you automatically pick up the latest available version rather than a specific, named version. However, this is not recommended; your builds are not repeatable; you may have tested with a slightly different version than what the build server used. (Using a dynamic version as the major version number is more problematic than using it in the minor version position.)"
+        errorLine1="            classpath &apos;com.android.tools.build:gradle:1.0.0+&apos;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\build.gradle"
+            line="35"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDynamicVersion"
+        severity="Warning"
+        message="Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.android.tools.build:gradle:0.14.0+)"
+        category="Correctness"
+        priority="4"
+        summary="Gradle Dynamic Version"
+        explanation="Using `+` in dependencies lets you automatically pick up the latest available version rather than a specific, named version. However, this is not recommended; your builds are not repeatable; you may have tested with a slightly different version than what the build server used. (Using a dynamic version as the major version number is more problematic than using it in the minor version position.)"
+        errorLine1="            classpath &apos;com.android.tools.build:gradle:0.14.0+&apos;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\build.gradle"
+            line="39"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDynamicVersion"
+        severity="Warning"
+        message="Avoid using + in version numbers; can lead to unpredictable and unrepeatable builds (com.android.tools.build:gradle:0.12.0+)"
+        category="Correctness"
+        priority="4"
+        summary="Gradle Dynamic Version"
+        explanation="Using `+` in dependencies lets you automatically pick up the latest available version rather than a specific, named version. However, this is not recommended; your builds are not repeatable; you may have tested with a slightly different version than what the build server used. (Using a dynamic version as the major version number is more problematic than using it in the minor version position.)"
+        errorLine1="            classpath &apos;com.android.tools.build:gradle:0.12.0+&apos;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\build.gradle"
+            line="43"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleOverrides"
+        severity="Warning"
+        message="This `versionCode` value (`10000`) is not used; it is always overridden by the value specified in the Gradle build script (`100008`)"
+        category="Correctness"
+        priority="4"
+        summary="Value overridden by Gradle build script"
+        explanation="The value of (for example) `minSdkVersion` is only used if it is not specified in the `build.gradle` build scripts. When specified in the Gradle build scripts, the manifest value is ignored and can be misleading, so should be removed to avoid ambiguity."
+        errorLine1="&lt;manifest android:hardwareAccelerated=&quot;true&quot; android:versionCode=&quot;10000&quot; android:versionName=&quot;1.0.0&quot; package=&quot;com.phonegap.helloworld&quot; xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\AndroidManifest.xml"
+            line="2"
+            column="46"/>
+    </issue>
+
+    <issue
+        id="UsingHttp"
+        severity="Warning"
+        message="Replace HTTP with HTTPS for better security; use https\://services.gradle.org/distributions/gradle-2.2.1-all.zip"
+        category="Security"
+        priority="6"
+        summary="Using HTTP instead of HTTPS"
+        explanation="The Gradle Wrapper is available both via HTTP and HTTPS. HTTPS is more secure since it protects against man-in-the-middle attacks etc. Older projects created in Android Studio used HTTP but we now default to HTTPS and recommend upgrading existing projects."
+        errorLine1="distributionUrl=http\://services.gradle.org/distributions/gradle-2.2.1-all.zip"
+        errorLine2="                ~~~~"
+        quickfix="studio">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\gradle\wrapper\gradle-wrapper.properties"
+            line="6"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="AllowBackup"
+        severity="Warning"
+        message="Should explicitly set `android:allowBackup` to `true` or `false` (it&apos;s `true` by default, and that can have some security implications for the application&apos;s data)"
+        category="Security"
+        priority="3"
+        summary="Missing `allowBackup` attribute"
+        explanation="The allowBackup attribute determines if an application&apos;s data can be backed up and restored. It is documented at http://developer.android.com/reference/android/R.attr.html#allowBackup
+
+By default, this flag is set to `true`. When this flag is set to `true`, application data can be backed up and restored by the user using `adb backup` and `adb restore`.
+
+This may have security consequences for an application. `adb backup` allows users who have enabled USB debugging to copy application data off of the device. Once backed up, all application data can be read by the user. `adb restore` allows creation of application data from a source specified by the user. Following a restore, applications should not assume that the data, file permissions, and directory permissions were created by the application itself.
+
+Setting `allowBackup=&quot;false&quot;` opts an application out of both backup and restore.
+
+To fix this warning, decide whether your application should support backup, and explicitly set `android:allowBackup=(true|false)&quot;`"
+        url="http://developer.android.com/reference/android/R.attr.html#allowBackup"
+        urls="http://developer.android.com/reference/android/R.attr.html#allowBackup"
+        errorLine1="    &lt;application android:hardwareAccelerated=&quot;true&quot; android:icon=&quot;@drawable/icon&quot; android:label=&quot;@string/app_name&quot; android:supportsRtl=&quot;true&quot;>"
+        errorLine2="    ^"
+        quickfix="studio,adt">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\AndroidManifest.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.xml.config` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\xml\config.xml"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.screen` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-land-hdpi\screen.png"/>
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-land-ldpi\screen.png"/>
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-land-mdpi\screen.png"/>
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-land-xhdpi\screen.png"/>
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-port-hdpi\screen.png"/>
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-port-ldpi\screen.png"/>
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-port-mdpi\screen.png"/>
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-port-xhdpi\screen.png"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        severity="Warning"
+        message="The image `screen.png` varies significantly in its density-independent (dip) size across the various density versions: drawable-land-xhdpi\screen.png: 640x360 dp (1280x720 px), drawable-land-hdpi\screen.png: 533x320 dp (800x480 px), drawable-land-mdpi\screen.png: 480x320 dp (480x320 px), drawable-land-ldpi\screen.png: 427x267 dp (320x200 px)"
+        category="Usability:Icons"
+        priority="5"
+        summary="Icon density-independent size validation"
+        explanation="Checks the all icons which are provided in multiple densities, all compute to roughly the same density-independent pixel (`dip`) size. This catches errors where images are either placed in the wrong folder, or icons are changed to new sizes but some folders are forgotten.">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-land-ldpi\screen.png"/>
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-land-mdpi\screen.png"/>
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-land-hdpi\screen.png"/>
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-land-xhdpi\screen.png"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        severity="Warning"
+        message="The image `screen.png` varies significantly in its density-independent (dip) size across the various density versions: drawable-port-xhdpi\screen.png: 360x640 dp (720x1280 px), drawable-port-hdpi\screen.png: 320x533 dp (480x800 px), drawable-port-mdpi\screen.png: 320x480 dp (320x480 px), drawable-port-ldpi\screen.png: 267x427 dp (200x320 px)"
+        category="Usability:Icons"
+        priority="5"
+        summary="Icon density-independent size validation"
+        explanation="Checks the all icons which are provided in multiple densities, all compute to roughly the same density-independent pixel (`dip`) size. This catches errors where images are either placed in the wrong folder, or icons are changed to new sizes but some folders are forgotten.">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-port-ldpi\screen.png"/>
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-port-mdpi\screen.png"/>
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-port-hdpi\screen.png"/>
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-port-xhdpi\screen.png"/>
+    </issue>
+
+    <issue
+        id="IconDensities"
+        severity="Warning"
+        message="Missing the following drawables in `drawable-mdpi`: icon.png (found in drawable-xxhdpi, drawable-hdpi)"
+        category="Usability:Icons"
+        priority="4"
+        summary="Icon densities validation"
+        explanation="Icons will look best if a custom version is provided for each of the major screen density classes (low, medium, high, extra high). This lint check identifies icons which do not have complete coverage across the densities.
+
+Low density is not really used much anymore, so this check ignores the ldpi density. To force lint to include it, set the environment variable `ANDROID_LINT_INCLUDE_LDPI=true`. For more information on current density usage, see http://developer.android.com/resources/dashboard/screens.html"
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-mdpi"/>
+    </issue>
+
+    <issue
+        id="IconDensities"
+        severity="Warning"
+        message="Missing the following drawables in `drawable-xhdpi`: icon.png (found in drawable-xxhdpi, drawable-hdpi)"
+        category="Usability:Icons"
+        priority="4"
+        summary="Icon densities validation"
+        explanation="Icons will look best if a custom version is provided for each of the major screen density classes (low, medium, high, extra high). This lint check identifies icons which do not have complete coverage across the densities.
+
+Low density is not really used much anymore, so this check ignores the ldpi density. To force lint to include it, set the environment variable `ANDROID_LINT_INCLUDE_LDPI=true`. For more information on current density usage, see http://developer.android.com/resources/dashboard/screens.html"
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res\drawable-xhdpi"/>
+    </issue>
+
+    <issue
+        id="IconMissingDensityFolder"
+        severity="Warning"
+        message="Missing density variation folders in `res`: drawable-xxxhdpi"
+        category="Usability:Icons"
+        priority="3"
+        summary="Missing density folder"
+        explanation="Icons will look best if a custom version is provided for each of the major screen density classes (low, medium, high, extra-high, extra-extra-high). This lint check identifies folders which are missing, such as `drawable-hdpi`.
+Low density is not really used much anymore, so this check ignores the ldpi density. To force lint to include it, set the environment variable `ANDROID_LINT_INCLUDE_LDPI=true`. For more information on current density usage, see http://developer.android.com/resources/dashboard/screens.html"
+        url="http://developer.android.com/guide/practices/screens_support.html"
+        urls="http://developer.android.com/guide/practices/screens_support.html">
+        <location
+            file="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\res"/>
+    </issue>
+
+</issues>

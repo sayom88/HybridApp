@@ -1,0 +1,2 @@
+C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\build\intermediates\classes\release
+C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\build\intermediates\pre-dexed\release\classes-57b7b19a5ee8c52f539304a8ad3809a269ca3916.jar

@@ -5,8 +5,15 @@
         jar="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="82f382153dc27670a3e90fc5a40955954ca2602d">
+        sha1="dcc88a85cd550f60b2e9311609ef204f187473c1">
         <dex dex="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\build\intermediates\pre-dexed\debug\classes-b2a0a46082407e49d38617e662662e201268770f.jar" />
+    </item>
+    <item
+        jar="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\release\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6d0ecb9e3ac1eb702fe4ad5b5c7a0022b97085d5">
+        <dex dex="C:\ANDRIOD_WORKSPACE\HybridApp\Hybrid_Login\platforms\android\build\intermediates\pre-dexed\release\classes-57b7b19a5ee8c52f539304a8ad3809a269ca3916.jar" />
     </item>
 
 </items>

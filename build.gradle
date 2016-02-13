@@ -233,9 +233,12 @@ android {
                 signingConfig signingConfigs.release
             }
         }
-        lintOptions {
-            abortOnError false
-        }
+
+
+
+
+
+
         addSigningProps(cdvReleaseSigningPropertiesFile, signingConfigs.release)
     }
     if (cdvDebugSigningPropertiesFile) {
@@ -243,6 +246,11 @@ android {
     }
 }
 
+android {
+    lintOptions {
+        abortOnError false
+    }
+}
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     // SUB-PROJECT DEPENDENCIES START
