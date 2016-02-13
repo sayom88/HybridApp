@@ -233,6 +233,9 @@ android {
                 signingConfig signingConfigs.release
             }
         }
+        lintOptions {
+            abortOnError false
+        }
         addSigningProps(cdvReleaseSigningPropertiesFile, signingConfigs.release)
     }
     if (cdvDebugSigningPropertiesFile) {
